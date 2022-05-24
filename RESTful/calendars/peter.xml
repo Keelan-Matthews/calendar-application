@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<schedule user="peter"
+		  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	      xsi:noNamespaceSchemaLocation="validate.xsd">
+	<event id="IMY210E13">
+		<title>IMY 210 Classes</title>
+		<type>Event</type>
+		<date repeat="Weekly">	
+			<day>2</day>
+			<month>March</month>
+			<startingTime>03:30 PM</startingTime>
+			<endingTime>04:30 PM</endingTime>
+		</date>
+		<guests>
+			<guest>
+				<name>Yan</name>
+				<email>yan.wong@up.ac.za</email>
+			</guest>
+			<guest>
+				<name>Daddy</name>
+				<email>daddylonglegs@gmail.com</email>
+			</guest>
+		</guests>
+		<venue>IT building</venue>
+		<description>
+			World worst brain surgeon giving class on XML.
+		</description>
+	</event>
+    <event id="IMY211E64">
+		<title>IMY 211 Classes</title>
+		<type>Event</type>
+		<date repeat="Monthly">	
+			<day>4</day>
+			<month>January</month>
+			<startingTime>05:30 PM</startingTime>
+			<endingTime>06:30 PM</endingTime>
+		</date>
+		<guests>
+			<guest>
+				<name>Yan</name>
+				<email>yan.wong@up.ac.za</email>
+			</guest>
+			<guest>
+				<name>Daddy</name>
+				<email>daddylonglegs@gmail.com</email>
+			</guest>
+		</guests>
+		<venue>Centenary</venue>
+		<description>
+			Crazy 3D stuff.
+		</description>
+	</event>
+	<event id="IMY211E90">
+		<title>Gym</title>
+		<type>Event</type>
+		<date repeat="Monthly">	
+			<day>8</day>
+			<month>January</month>
+			<startingTime>05:30 PM</startingTime>
+			<endingTime>06:30 PM</endingTime>
+		</date>
+		<guests>
+			<guest>
+				<name>Yan</name>
+				<email>yan.wong@up.ac.za</email>
+			</guest>
+			<guest>
+				<name>Daddy</name>
+				<email>daddylonglegs@gmail.com</email>
+			</guest>
+		</guests>
+		<venue>Virgin Active</venue>
+		<description>
+			Time to go gym at Virgin Active and get massive gains
+		</description>
+	</event>
+</schedule>
