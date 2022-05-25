@@ -3,10 +3,10 @@
 		<v-main>
 			<v-row>
 				<v-col cols="3">
-					<DashboardComp />
+					<DashboardComp @schedule="updateSchedule" @currUser="updateUser" />
 				</v-col>
 				<v-col>
-					<CalendarComp />
+					<CalendarComp :currSchedule="schedule" :currUser="user" />
 				</v-col>
 			</v-row>
 		</v-main>
@@ -24,9 +24,17 @@ export default {
 		CalendarComp,
 		DashboardComp
 	},
-
 	data: () => ({
-		//
+		schedule: '',
+		user: ''
 	}),
+	methods: {
+		updateSchedule(event) {
+			this.schedule = event;
+		},
+		updateUser(event) {
+			this.user = event;
+		}
+	}
 };
 </script>

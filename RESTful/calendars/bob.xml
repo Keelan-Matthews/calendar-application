@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schedule user="peter" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="validate.xsd">
+	<event id="CRAZYEGX4">
+		<title>Crazy Event</title>
+		<type>Event</type>
+		<date repeat="Monthly">
+			<day>14</day>
+			<month>May</month>
+			<startingTime>01:08 AM</startingTime>
+			<endingTime>05:57 PM</endingTime>
+		</date>
+		<guests>
+			<guest>
+				<name>Keelan</name>
+				<email>keelanmatthews123@gmail.com</email>
+			</guest>
+		</guests>
+		<venue>Crazy Place</venue>
+		<description>This is a crazy event</description>
+	</event>
+	<event id="CRYSETISY">
+		<title>Cry sesh</title>
+		<type>Task</type>
+		<date repeat="Weekly">
+			<day>27</day>
+			<month>May</month>
+			<startingTime>08:15 AM</startingTime>
+			<endingTime>09:15 AM</endingTime>
+		</date>
+		<guests>
+			<guest>
+				<name>Cayleeeee</name>
+				<email>Cayleeeeiscool@icloud.com</email>
+			</guest>
+		</guests>
+		<venue>Caylees room</venue>
+		<description>Shame he needs it</description>
+	</event>
+</schedule>

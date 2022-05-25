@@ -1,77 +1,155 @@
-<?xml version="1.0"?>
-<schedule user="peter"
-		  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	      xsi:noNamespaceSchemaLocation="validate.xsd">
-	<event id="IMY210E13">
-		<title>IMY 210 Classes</title>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schedule user="peter" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="validate.xsd">
+	<event id="CRAZYEGX4">
+		<title>Crazy Event</title>
 		<type>Event</type>
-		<date repeat="Weekly">	
-			<day>2</day>
-			<month>March</month>
-			<startingTime>03:30 PM</startingTime>
-			<endingTime>04:30 PM</endingTime>
+		<date repeat="Monthly">
+			<day>14</day>
+			<month>May</month>
+			<startingTime>09:08 AM</startingTime>
+			<endingTime>05:57 PM</endingTime>
 		</date>
 		<guests>
 			<guest>
-				<name>Yan</name>
-				<email>yan.wong@up.ac.za</email>
-			</guest>
-			<guest>
-				<name>Daddy</name>
-				<email>daddylonglegs@gmail.com</email>
+				<name>Keelan</name>
+				<email>keelanmatthews123@gmail.com</email>
 			</guest>
 		</guests>
-		<venue>IT building</venue>
-		<description>
-			World worst brain surgeon giving class on XML.
-		</description>
+		<venue>Crazy Place</venue>
+		<description>This is a crazy event</description>
 	</event>
-    <event id="IMY211E64">
-		<title>IMY 211 Classes</title>
-		<type>Event</type>
-		<date repeat="Monthly">	
-			<day>4</day>
-			<month>January</month>
-			<startingTime>05:30 PM</startingTime>
-			<endingTime>06:30 PM</endingTime>
+	<event id="CRYSETISY">
+		<title>Cry sesh</title>
+		<type>Task</type>
+		<date repeat="Weekly">
+			<day>27</day>
+			<month>February</month>
+			<startingTime>08:15 AM</startingTime>
+			<endingTime>09:15 AM</endingTime>
 		</date>
 		<guests>
 			<guest>
-				<name>Yan</name>
-				<email>yan.wong@up.ac.za</email>
+				<name>Cayleeeee</name>
+				<email>Cayleeeeiscool@icloud.com</email>
+			</guest>
+		</guests>
+		<venue>Caylees room</venue>
+		<description>Shame he needs it</description>
+	</event>
+	<event id="IMY2102SS">
+		<title>IMY 210 Classes</title>
+		<type>Event</type>
+		<date repeat="Weekly">
+			<day>20</day>
+			<month>February</month>
+			<startingTime>10:15 AM</startingTime>
+			<endingTime>11:15 AM</endingTime>
+		</date>
+		<guests>
+			<guest>
+				<name>Cayleeeee</name>
+				<email>Cayleeeeiscool@icloud.com</email>
 			</guest>
 			<guest>
-				<name>Daddy</name>
-				<email>daddylonglegs@gmail.com</email>
+				<name>Keelan</name>
+				<email>keelan@icloud.com</email>
 			</guest>
 		</guests>
 		<venue>Centenary</venue>
-		<description>
-			Crazy 3D stuff.
-		</description>
+		<description>XML and stuff is hard</description>
 	</event>
-	<event id="IMY211E90">
-		<title>Gym</title>
+	<event id="COS211092">
+		<title>COS 216 Classes</title>
 		<type>Event</type>
-		<date repeat="Monthly">	
-			<day>8</day>
-			<month>January</month>
-			<startingTime>05:30 PM</startingTime>
-			<endingTime>06:30 PM</endingTime>
+		<date repeat="Weekly">
+			<day>24</day>
+			<month>February</month>
+			<startingTime>07:00 AM</startingTime>
+			<endingTime>08:00 AM</endingTime>
 		</date>
 		<guests>
 			<guest>
-				<name>Yan</name>
-				<email>yan.wong@up.ac.za</email>
+				<name>Cayleeeee</name>
+				<email>Cayleeeeiscool@icloud.com</email>
 			</guest>
 			<guest>
-				<name>Daddy</name>
-				<email>daddylonglegs@gmail.com</email>
+				<name>Keelan</name>
+				<email>keelan@icloud.com</email>
+			</guest>
+			<guest>
+				<name>Carl</name>
+				<email>carl@icloud.com</email>
 			</guest>
 		</guests>
-		<venue>Virgin Active</venue>
-		<description>
-			Time to go gym at Virgin Active and get massive gains
-		</description>
+		<venue>IT Building</venue>
+		<description>Boop boop beep boop 010010010011100100101</description>
+	</event>
+	<event id="PLAYL10SK">
+		<title>Play LoL</title>
+		<type>Task</type>
+		<date repeat="Monthly">
+			<day>1</day>
+			<month>January</month>
+			<startingTime>07:00 AM</startingTime>
+			<endingTime>11:00 PM</endingTime>
+		</date>
+		<guests>
+			<guest>
+				<name>Keelan</name>
+				<email>keelan@icloud.com</email>
+			</guest>
+		</guests>
+		<venue>Home</venue>
+		<description>I am the best player out there</description>
+	</event>
+	<event id="DONOTJW81">
+		<title>Do nothing</title>
+		<type>Event</type>
+		<date>
+			<day>30</day>
+			<month>May</month>
+			<startingTime>07:00 AM</startingTime>
+			<endingTime>07:00 PM</endingTime>
+		</date>
+		<guests>
+		</guests>
+		<venue>The beach</venue>
+		<description>Just kidding imagine having any free time nowadays</description>
+	</event>
+	<event id="COS21DS21">
+		<title>COS 212 Classes</title>
+		<type>Event</type>
+		<date repeat="Monthly">
+			<day>1</day>
+			<month>April</month>
+			<startingTime>06:00 PM</startingTime>
+			<endingTime>11:00 PM</endingTime>
+		</date>
+		<guests>
+			<guest>
+				<name>Keelan</name>
+				<email>keelan@icloud.com</email>
+			</guest>
+		</guests>
+		<venue>IT</venue>
+		<description>Default description because I'm lazy</description>
+	</event>
+	<event id="SEEFR0123">
+		<title>See friend</title>
+		<type>Event</type>
+		<date repeat="Monthly">
+			<day>10</day>
+			<month>May</month>
+			<startingTime>04:00 PM</startingTime>
+			<endingTime>05:00 PM</endingTime>
+		</date>
+		<guests>
+			<guest>
+				<name>Keelan</name>
+				<email>keelan@icloud.com</email>
+			</guest>
+		</guests>
+		<venue>Friend's House</venue>
+		<description>Default description because I'm lazy</description>
 	</event>
 </schedule>

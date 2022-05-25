@@ -102,19 +102,17 @@
 
     <!-- Restriction on guests type -->
     <xs:complexType name="guestsType">
-        <xs:sequence maxOccurs="10">
+        <xs:sequence minOccurs="0" maxOccurs="10">
             <xs:element name="guest" type="guestType"/>
         </xs:sequence>
     </xs:complexType>
 
     <!-- Restriction on guest type -->
     <xs:complexType name="guestType">
-        <xs:choice>
-            <xs:sequence>
-                <xs:element name="name" type="nameType"/>
-                <xs:element name="email" type="nameType"/>
-            </xs:sequence>
-        </xs:choice>
+        <xs:sequence>
+            <xs:element name="name" type="nameType"/>
+            <xs:element name="email" type="nameType"/>
+        </xs:sequence>
     </xs:complexType>
 
     <!-- Restriction on name -->
