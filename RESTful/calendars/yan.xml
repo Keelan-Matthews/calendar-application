@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="stylesheet.xsl"?>
 <schedule user="peter" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="validate.xsd">
 	<event id="CRAZYEGX4">
 		<title>Crazy Event</title>
 		<type>Event</type>
 		<date repeat="Monthly">
-			<day>14</day>
+			<day>1</day>
 			<month>May</month>
 			<startingTime>09:08 AM</startingTime>
 			<endingTime>05:57 PM</endingTime>
@@ -22,7 +23,7 @@
 		<title>Cry sesh</title>
 		<type>Task</type>
 		<date repeat="Weekly">
-			<day>27</day>
+			<day>2</day>
 			<month>February</month>
 			<startingTime>08:15 AM</startingTime>
 			<endingTime>09:15 AM</endingTime>
@@ -40,7 +41,7 @@
 		<title>IMY 210 Classes</title>
 		<type>Event</type>
 		<date repeat="Weekly">
-			<day>20</day>
+			<day>24</day>
 			<month>February</month>
 			<startingTime>10:15 AM</startingTime>
 			<endingTime>11:15 AM</endingTime>
@@ -88,7 +89,7 @@
 		<title>Play LoL</title>
 		<type>Task</type>
 		<date repeat="Monthly">
-			<day>1</day>
+			<day>7</day>
 			<month>January</month>
 			<startingTime>07:00 AM</startingTime>
 			<endingTime>11:00 PM</endingTime>
@@ -106,7 +107,7 @@
 		<title>Do nothing</title>
 		<type>Event</type>
 		<date>
-			<day>30</day>
+			<day>10</day>
 			<month>May</month>
 			<startingTime>07:00 AM</startingTime>
 			<endingTime>07:00 PM</endingTime>
@@ -119,7 +120,7 @@
 	<event id="COS21DS21">
 		<title>COS 212 Classes</title>
 		<type>Event</type>
-		<date repeat="Monthly">
+		<date repeat="Weekly">
 			<day>1</day>
 			<month>April</month>
 			<startingTime>06:00 PM</startingTime>
@@ -137,8 +138,8 @@
 	<event id="GYMSTFD11">
 		<title>Gym Stuff</title>
 		<type>Event</type>
-		<date repeat="Daily">
-			<day>4</day>
+		<date repeat="Monthly">
+			<day>8</day>
 			<month>March</month>
 			<startingTime>08:00 PM</startingTime>
 			<endingTime>09:00 PM</endingTime>

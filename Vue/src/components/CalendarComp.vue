@@ -14,7 +14,8 @@
 						{{ $refs.calendar.title }}
 					</v-toolbar-title>
 					<v-spacer></v-spacer>
-					<v-btn class="mr-4" color="primary" @click="dialog = true" dark :class="isActive() ? 'd-block' : 'd-none'">Add Event</v-btn>
+					<v-btn class="mr-4" color="primary" @click="dialog = true" dark
+						:class="isActive() ? 'd-block' : 'd-none'">Add Event</v-btn>
 					<v-menu bottom right>
 						<template v-slot:activator="{ on, attrs }">
 							<v-btn outlined color="grey darken-2" v-bind="attrs" v-on="on">
@@ -126,7 +127,8 @@
 				<v-menu v-model="selectedOpen" :close-on-content-click="false" :activator="selectedElement" offset-x>
 					<v-card color="grey lighten-4" min-width="350px" flat>
 						<v-toolbar :color="selectedEvent.color" dark>
-							<v-btn @click="deleteEvent(selectedEvent.id)" :class="isActive() ? 'd-block' : 'd-none'" icon>
+							<v-btn @click="deleteEvent(selectedEvent.id)" :class="isActive() ? 'd-block' : 'd-none'"
+								icon>
 								<v-icon>mdi-delete</v-icon>
 							</v-btn>
 							<v-toolbar-title v-html="selectedEvent.name + ' (' + selectedEvent.venue + ')'">
@@ -151,7 +153,8 @@
 						<v-card-actions>
 							<v-btn text color="secondary" @click="closeEvent()">Close</v-btn>
 							<v-btn text v-if="currentEdit !== selectedEvent.id"
-								@click.prevent="editEvent(selectedEvent)" :class="isActive() ? 'd-block' : 'd-none'">Edit</v-btn>
+								@click.prevent="editEvent(selectedEvent)" :class="isActive() ? 'd-block' : 'd-none'">
+								Edit</v-btn>
 							<v-btn text v-else @click.prevent="updateEvent(selectedEvent)">Save</v-btn>
 						</v-card-actions>
 					</v-card>
@@ -166,11 +169,11 @@ export default {
 	name: 'CalendarComp',
 	props: ['currSchedule', 'currUser'],
 	watch: {
-		currSchedule: function(val) {
+		currSchedule: function (val) {
 			this.user = val;
 			this.getEvents();
 		},
-		currUser: function(val) {
+		currUser: function (val) {
 			this.selectedUser = val;
 		}
 	},
@@ -259,20 +262,18 @@ export default {
 			return Math.floor((b - a + 1) * Math.random()) + a
 		},
 		isActive() {
-			let active = this.selectedUser.substring(0,this.selectedUser.indexOf(' ')).toLowerCase();
+			let active = this.selectedUser.substring(0, this.selectedUser.indexOf(' ')).toLowerCase();
 			return active === this.user;
 		},
 		getEvents() {
 			this.events = [];
-
+			console.log(this.events);
 			if (this.user != undefined) {
 				fetch("http://localhost:3000/calendar/" + this.user)
 					.then(res => res.json())
 					.then(data => {
-						console.log(data);
 						if (data.schedule.event === undefined) return;
 
-						console.log(data);
 						let eventArray = data.schedule.event;
 
 						eventArray.forEach(event => {
@@ -410,15 +411,15 @@ export default {
 					details: ev.details,
 				}),
 			}
-			console.log(ev.details);
-			console.log(options.body);
 
 			fetch("http://localhost:3000/calendar/" + this.user + "/update/" + this.currentEdit, options)
 				.then(res => res.json())
-				.then(data => console.log(data));
-
-			this.selectedOpen = false;
-			this.currentEdit = null;
+				.then(data => {
+					console.log(data);
+					this.selectedOpen = false;
+					this.currentEdit = null;
+					this.getEvents();
+				});
 		},
 		deleteEvent() {
 			const options = {
@@ -456,8 +457,6 @@ export default {
 					"guests": this.guests
 				})
 			}
-
-			console.log(options.body)
 
 			fetch("http://localhost:3000/calendar/" + this.user + "/add", options)
 				.then(res => res.json())

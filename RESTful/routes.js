@@ -56,8 +56,6 @@ let router = (app,fs) => {
             return;
         }
 
-        console.log(req.body);
-
         // Retrieve xml file data for specific user
         let data_file = './calendars/'+user+'.xml';
         
@@ -73,16 +71,13 @@ let router = (app,fs) => {
             let json;
             parser.parseString(data, (err, result) => {
                 let events = result.schedule.event;
-                console.log(events);
 
                 //Get index of event to be updated
                 let index = events.findIndex(e => e.$.id === eventId);
-                console.log(index);
 
                 //Update event
                 events[index].description[0] = req.body.details;
 
-                console.log(events);
                 json = result;
             });
 
@@ -91,7 +86,7 @@ let router = (app,fs) => {
             fs.writeFile(data_file, xml, function (err,data) {
                 if (err) console.log(err);
                 console.log('successfully updated');
-                res.status(200).send(JSON.stringify(data));
+                res.status(200).send("Updated");
             })
         })      
     })
