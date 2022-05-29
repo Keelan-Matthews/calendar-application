@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<?xml-stylesheet type="text/xsl" href="stylesheet.xsl"?>
 <schedule user="peter" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="validate.xsd">
   <event id="CRAZYEGX4">
     <title>Crazy Event</title>
@@ -36,28 +35,6 @@
     </guests>
     <venue>Caylees room</venue>
     <description>Shame he needs it</description>
-  </event>
-  <event id="IMY2102SS">
-    <title>IMY 210 Classes</title>
-    <type>Event</type>
-    <date repeat="Daily">
-      <day>2</day>
-      <month>February</month>
-      <startingTime>10:15 AM</startingTime>
-      <endingTime>11:15 AM</endingTime>
-    </date>
-    <guests>
-      <guest>
-        <name>Cayleeeee</name>
-        <email>Cayleeeeiscool@icloud.com</email>
-      </guest>
-      <guest>
-        <name>Keelan</name>
-        <email>keelan@icloud.com</email>
-      </guest>
-    </guests>
-    <venue>Centenary</venue>
-    <description>XML and stuff is hard</description>
   </event>
   <event id="COS211092">
     <title>COS 216 Classes</title>
@@ -116,77 +93,5 @@
 		</guests>
     <venue>The beach</venue>
     <description>Just kidding imagine having any free time nowadays</description>
-  </event>
-  <event id="COS21DS21">
-    <title>COS 212 Classes</title>
-    <type>Event</type>
-    <date repeat="Monthly">
-      <day>16</day>
-      <month>April</month>
-      <startingTime>06:00 PM</startingTime>
-      <endingTime>11:00 PM</endingTime>
-    </date>
-    <guests>
-      <guest>
-        <name>Keelan</name>
-        <email>keelan@icloud.com</email>
-      </guest>
-    </guests>
-    <venue>IT</venue>
-    <description>Default description because I'm lazy</description>
-  </event>
-  <event id="GYMSTFD11">
-    <title>Gym Stuff</title>
-    <type>Event</type>
-    <date repeat="Monthly">
-      <day>9</day>
-      <month>March</month>
-      <startingTime>08:00 PM</startingTime>
-      <endingTime>09:00 PM</endingTime>
-    </date>
-    <guests>
-      <guest>
-        <name>Keelan</name>
-        <email>keelan@icloud.com</email>
-      </guest>
-    </guests>
-    <venue>Virgin Active</venue>
-    <description>Default description because I'm lazy</description>
-  </event>
-  <event id="SEEFR0123">
-    <title>See friend</title>
-    <type>Event</type>
-    <date>
-      <day>8</day>
-      <month>June</month>
-      <startingTime>04:00 PM</startingTime>
-      <endingTime>05:00 PM</endingTime>
-    </date>
-    <guests>
-      <guest>
-        <name>Keelan</name>
-        <email>keelan@icloud.com</email>
-      </guest>
-    </guests>
-    <venue>Friend's House</venue>
-    <description>Default description because I'm lazy</description>
-  </event>
-  <event id="PAINTTSJP">
-    <title>Painting class</title>
-    <type>Task</type>
-    <date repeat="Weekly">
-      <day>27</day>
-      <month>May</month>
-      <startingTime>01:00 AM</startingTime>
-      <endingTime>02:00 AM</endingTime>
-    </date>
-    <guests>
-      <guest>
-        <name>Keelan</name>
-        <email>reallyweirdguy@gmail.com</email>
-      </guest>
-    </guests>
-    <venue>Artsy fartsy place</venue>
-    <description>I am artist </description>
   </event>
 </schedule>

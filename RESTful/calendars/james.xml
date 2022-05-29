@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<?xml-stylesheet type="text/xsl" href="stylesheet.xsl"?>
 <schedule user="peter" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="validate.xsd">
   <event id="CRAZYEGX4">
     <title>Crazy Event</title>
@@ -101,21 +100,7 @@
       </guest>
     </guests>
     <venue>Home</venue>
-    <description>I am the best player out there</description>
-  </event>
-  <event id="DONOTJW81">
-    <title>Do nothing</title>
-    <type>Event</type>
-    <date>
-      <day>30</day>
-      <month>May</month>
-      <startingTime>07:00 AM</startingTime>
-      <endingTime>07:00 PM</endingTime>
-    </date>
-    <guests>&#xD;
-		</guests>
-    <venue>The beach</venue>
-    <description>Just kidding imagine having any free time nowadays</description>
+    <description>I am the best player out there, no doubt</description>
   </event>
   <event id="COS21DS21">
     <title>COS 212 Classes</title>
@@ -170,18 +155,5 @@
     </guests>
     <venue>Friend's House</venue>
     <description>Default description because I'm lazy</description>
-  </event>
-  <event id="DATEWAF58">
-    <title>Date with hot blonde</title>
-    <type>Appointment</type>
-    <date repeat="Daily">
-      <day>26</day>
-      <month>May</month>
-      <startingTime>07:00 PM</startingTime>
-      <endingTime>11:00 PM</endingTime>
-    </date>
-    <guests/>
-    <venue>Paris</venue>
-    <description>Night of your life with Caylee</description>
   </event>
 </schedule>

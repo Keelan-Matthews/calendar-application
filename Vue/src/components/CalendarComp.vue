@@ -53,28 +53,28 @@
 					<v-container>
 						<v-form @submit.prevent="addEvent" class="pl-3 pr-3">
 							<div style="overflow-y: auto; overflow-x: hidden; max-height: 700px;" class="pa-3">
+								<small>Fields marked with * are required</small>
 								<v-row align="center">
 									<v-col class="d-flex" cols="12" sm="6">
 										<v-select v-model="eventType" :items="['Event', 'Task', 'Appointment']"
-											label="Event Type" standard prepend-icon="mdi-calendar" required />
+											label="Event Type*" standard prepend-icon="mdi-calendar" />
 									</v-col>
 									<v-col class="d-flex" cols="12" sm="6">
 										<v-select v-model="repeat" :items="['No Repeat', 'Monthly', 'Weekly', 'Daily']"
-											label="Repeat" standard prepend-icon="mdi-replay" required />
+											label="Repeat*" standard prepend-icon="mdi-replay" />
 									</v-col>
 								</v-row>
 
-								<v-text-field v-model="name" type="text" label="Name" :counter="25" class="mb-5"
-									required />
-								<v-text-field v-model="date" type="date" label="Date" required />
+								<v-text-field v-model="name" type="text" label="Name*" :counter="25" class="mb-5" />
+								<v-text-field v-model="date" type="date" label="Date*" />
 								<v-row justify-md="center">
 									<v-menu ref="menu" v-model="menu2" :close-on-content-click="false" :nudge-right="40"
 										:return-value.sync="start" transition="scale-transition" offset-y
 										max-width="290px" min-width="290px">
 										<template v-slot:activator="{ on, attrs }">
-											<v-text-field v-model="start" label="Start Time"
+											<v-text-field v-model="start" label="Start Time*"
 												prepend-icon="mdi-clock-time-four-outline" readonly v-bind="attrs"
-												v-on="on" class="pl-3" required></v-text-field>
+												v-on="on" class="pl-3"></v-text-field>
 										</template>
 										<v-time-picker v-if="menu2" v-model="start" :max="end" full-width
 											@click:minute="$refs.menu.save(start)"></v-time-picker>
@@ -83,9 +83,9 @@
 										:nudge-right="40" :return-value.sync="end" transition="scale-transition"
 										offset-y max-width="290px" min-width="290px">
 										<template v-slot:activator="{ on, attrs }">
-											<v-text-field v-model="end" label="End Time"
+											<v-text-field v-model="end" label="End Time*"
 												prepend-icon="mdi-clock-time-four-outline" readonly v-bind="attrs"
-												v-on="on" required></v-text-field>
+												v-on="on"></v-text-field>
 										</template>
 										<v-time-picker v-if="menu3" v-model="end" :min="start" full-width
 											@click:minute="$refs.menu2.save(end)"></v-time-picker>
@@ -93,8 +93,8 @@
 								</v-row>
 
 								<v-text-field v-model="details" type="text" label="Description" :counter="255"
-									class="mt-5" required />
-								<v-text-field v-model="venue" type="text" label="Venue" :counter="25" required />
+									class="mt-5" />
+								<v-text-field v-model="venue" type="text" label="Venue" :counter="25" />
 
 								<h4 class="grey--text">Guests</h4>
 								<div v-for="(guest, index) in guests" :key="index" class="d-flex">
@@ -113,7 +113,7 @@
 							</div>
 
 							<div class="text-right mt-5 mb-3 pt-5">
-								<v-btn type="submit" color="primary" class="mr-4" @click.stop="dialog = false">Create
+								<v-btn type="submit" color="primary" class="mr-4">Create
 									Event</v-btn>
 							</div>
 						</v-form>
@@ -123,7 +123,8 @@
 
 			<v-sheet height="800" class="mr-5 pr-5">
 				<v-calendar ref="calendar" v-model="focus" color="primary" :events="events" :event-color="getEventColor"
-					:type="type" @click:event="showEvent" @click:more="viewDay" @click:date="viewDay"></v-calendar>
+					:type="type" @click:event="showEvent" @click:more="viewDay" @click:date="viewDay"
+					:key="calendarKey"></v-calendar>
 				<v-menu v-model="selectedOpen" :close-on-content-click="false" :activator="selectedElement" offset-x>
 					<v-card color="grey lighten-4" min-width="350px" flat>
 						<v-toolbar :color="selectedEvent.color" dark>
@@ -165,6 +166,7 @@
 </template>
 
 <script>
+
 export default {
 	name: 'CalendarComp',
 	props: ['currSchedule', 'currUser'],
@@ -208,6 +210,7 @@ export default {
 		dialog: false,
 		menu2: false,
 		menu3: false,
+		calendarKey: true
 	}),
 	computed: {
 		borderStyle() {
@@ -266,8 +269,9 @@ export default {
 			return active === this.user;
 		},
 		getEvents() {
+			this.calendarKey = !this.calendarKey;
 			this.events = [];
-			console.log(this.events);
+
 			if (this.user != undefined) {
 				fetch("http://localhost:3000/calendar/" + this.user)
 					.then(res => res.json())
@@ -414,22 +418,22 @@ export default {
 
 			fetch("http://localhost:3000/calendar/" + this.user + "/update/" + this.currentEdit, options)
 				.then(res => res.json())
-				.then(data => {
+				.then((data) => {
 					console.log(data);
 					this.selectedOpen = false;
 					this.currentEdit = null;
 					this.getEvents();
 				});
 		},
-		deleteEvent() {
+		deleteEvent(id) {
 			const options = {
 				method: "DELETE",
 				headers: { "Content-Type": "application/json" }
 			}
 
-			fetch("http://localhost:3000/calendar/" + this.user + "/delete/" + this.currentEdit, options)
+			fetch("http://localhost:3000/calendar/" + this.user + "/delete/" + id, options)
 				.then(res => res.json())
-				.then(data => {
+				.then((data) => {
 					console.log(data);
 					this.selectedOpen = false;
 					this.getEvents();
@@ -442,39 +446,46 @@ export default {
 			this.guests.splice(i, 1);
 		},
 		addEvent() {
-			const options = {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({
-					"name": this.name,
-					"details": this.details,
-					"date": this.date,
-					"repeat": this.repeat,
-					"start": this.start,
-					"end": this.end,
-					"eventType": this.eventType,
-					"venue": this.venue,
-					"guests": this.guests
-				})
+			if (this.name == null || this.date == null || this.repeat == null || this.eventType == null || this.start == null || this.end == null) {
+				alert("Please fill in required details");
+			}
+			else {
+				this.dialog = false;
+
+				const options = {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						"name": this.name,
+						"details": this.details,
+						"date": this.date,
+						"repeat": this.repeat,
+						"start": this.start,
+						"end": this.end,
+						"eventType": this.eventType,
+						"venue": this.venue,
+						"guests": this.guests
+					})
+				}
+
+				fetch("http://localhost:3000/calendar/" + this.user + "/add", options)
+					.then(res => res.json())
+					.then(data => {
+						console.log(data);
+						//Reset all variables to null after insert
+						this.name = null;
+						this.details = null;
+						this.date = null;
+						this.repeat = null;
+						this.start = null;
+						this.end = null;
+						this.eventType = null;
+						this.venue = null;
+						this.guests = [];
+						this.getEvents();
+					});
 			}
 
-			fetch("http://localhost:3000/calendar/" + this.user + "/add", options)
-				.then(res => res.json())
-				.then(data => {
-					console.log(data);
-					//Reset all variables to null after insert
-					this.name = null;
-					this.details = null;
-					this.date = null;
-					this.repeat = null;
-					this.start = null;
-					this.end = null;
-					this.eventType = null;
-					this.venue = null;
-					this.guests = []
-
-					this.getEvents();
-				});
 		}
 	}
 };

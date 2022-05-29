@@ -86,7 +86,7 @@ let router = (app,fs) => {
             fs.writeFile(data_file, xml, function (err,data) {
                 if (err) console.log(err);
                 console.log('successfully updated');
-                res.status(200).send("Updated");
+                res.status(200).send(JSON.stringify({'status':'updated'}));
             })
         })      
     })
@@ -124,6 +124,7 @@ let router = (app,fs) => {
 
                 //Get index of event to be updated
                 let index = events.findIndex(e => e.$.id === eventId);
+                console.log(events[index]);
 
                 //Update event
                 events.splice(index, 1);
@@ -135,7 +136,7 @@ let router = (app,fs) => {
             fs.writeFile(data_file, xml, function (err,data) {
                 if (err) console.log(err);
                 console.log('successfully deleted');
-                res.status(200).send("Deleted");
+                res.status(200).send(JSON.stringify({'status':'deleted'}));
             })
         })
     })
@@ -174,10 +175,12 @@ let router = (app,fs) => {
             //Get object for guests (amount varies so it needs a separate method)
             let guests = [];
             for (let i = 0; i < passedReq.guests.length; i++) {
-                guests.push({
-                    "name": passedReq.guests[i].name, 
-                    "email": passedReq.guests[i].email
-                })
+                if (passedReq.guests[i].name != '' && passedReq.guests[i].email != '') {
+                    guests.push({
+                        "name": passedReq.guests[i].name, 
+                        "email": passedReq.guests[i].email
+                    })
+                }
             }
             
             //Convert time variables to match XML requirements
@@ -232,9 +235,7 @@ let router = (app,fs) => {
 
             fs.writeFile(data_file, xml, function (err,data) {
                 if (err) console.log(err);
-                console.log('successfully added');
-                console.log(JSON.stringify(data));
-                res.status(200).send(JSON.stringify(data));
+                res.status(200).send(JSON.stringify({'status':'added'}));
             })
         })
     })
